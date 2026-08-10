@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nabita Penmetsa</title>
-  <meta name="description" content="Nabita Penmetsa — Assistant Professor of Operations and Information Systems, David Eccles School of Business, University of Utah.">
+  <meta name="description" content="Nabita Penmetsa — AI safety researcher working on multi-agent evaluation, organizational safety, and interaction-level alignment. Assistant Professor at the David Eccles School of Business, University of Utah.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <h1 class="name">Nabita Penmetsa</h1>
-      <p class="title">Assistant Professor of Operations and Information Systems</p>
-      <p class="affiliation">David Eccles School of Business, University of Utah</p>
+      <p class="title">AI Safety Researcher</p>
+      <p class="affiliation">Assistant Professor &middot; David Eccles School of Business, University of Utah</p>
       <nav class="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#training">Training &amp; Skills</a>
         <a href="#teaching">Teaching</a>
         <a href="#contact">Contact</a>
-        <a href="assets/Nabita_CV.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="assets/Nabita_AI_Safety_CV.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
     </div>
   </header>
@@ -29,65 +30,80 @@
     <section id="about">
       <h2>About</h2>
       <p>
-        I am an Assistant Professor of Operations and Information Systems at the David Eccles School of Business, University of Utah. My research sits at the intersection of technology, economics, and public policy, addressing fundamental questions about privacy, fairness, and responsibility in digital markets.
+        I study the safety of agentic AI systems, focusing on <strong>multi-agent evaluation, organizational safety, and interaction-level alignment</strong>. My research combines empirical LLM evaluation (Inspect AI, RLHF/RLAIF, and constitutional AI) with tools from economics, game theory, and organization theory to understand how organizational structure, incentives, coordination, and information flow shape agent behavior and amplify risks such as cascading failures, hidden-objective propagation, and emergent coordination.
       </p>
       <p>
-        Using economic modeling and game-theoretic approaches, I examine how market structures, monetization strategies, organizational design, and ethical commitments shape outcomes in platform markets. I hold a Ph.D. in Management Science from the Joseph M. Katz Graduate School of Business, University of Pittsburgh.
+        My long-term research goal is to develop rigorous evaluation frameworks and alignment methods to improve the safety, reliability, and governance of increasingly autonomous AI systems. I am currently an Assistant Professor at the David Eccles School of Business, University of Utah, and hold a Ph.D. in Management Science from the University of Pittsburgh.
       </p>
     </section>
 
     <section id="research">
       <h2>Research</h2>
-      <p>
-        My research investigates how economic incentives and societal values shape the adoption and impact of technology. Early work analyzed dynamic pricing of new technology products and the economics of online advertising under competition and data regulation. Building on this, I have studied market-driven segmentation in equity crowdfunding and the broader question of how platform design shapes outcomes in digital markets.
-      </p>
-      <p>
-        My more recent work examines optimal governance structures in platform markets and the role of ethics in platform responsibility. I show that centralized coordination can outperform decentralized structures by harnessing information more effectively, and that ethically constrained platforms can outperform purely profit-driven platforms under bounded rationality—resolving moral hazard, reducing consumer risk, and initiating a virtuous cycle of higher effort, trust, and profitability.
-      </p>
-      <p>
-        Looking ahead, I extend these insights to AI-driven platforms and AI marketplaces, where transparency, alignment, and user control are central to ensuring that technological progress advances societal well-being.
-      </p>
 
       <h3>Research Interests</h3>
       <ul class="tags">
-        <li>Platform economics and governance</li>
-        <li>Ethics and responsibility in digital markets</li>
-        <li>Privacy and online advertising</li>
-        <li>Crowdfunding and two-sided markets</li>
-        <li>AI alignment, safety, and policy</li>
+        <li>Multi-agent safety and organizational alignment</li>
+        <li>LLM evaluations and benchmarking</li>
+        <li>RLHF and preference optimization</li>
+        <li>Constitutional AI and role-based alignment</li>
+        <li>Governance of agentic systems</li>
+        <li>Incentive and mechanism design for AI</li>
       </ul>
 
-      <h3>Working Papers and Research in Progress</h3>
+      <h3>AI Safety Research</h3>
       <ol class="papers">
         <li>
-          <span class="paper-title">From Conversational Helpfulness to Clinical Safety through Interaction Level Governance</span>
-          <span class="coauthors">with Pradeep Podila</span>
-          <span class="venue">Under review at <em>npj Digital Medicine</em>, Nature</span>
+          <span class="paper-title">Secret Loyalties in Agentic Organizations</span>
+          <span class="venue">Multi-agent evaluation and organizational safety &middot; Lead researcher &middot; Inspect AI &middot; Writeup available on request</span>
+          <p class="paper-desc"><strong>Setup.</strong> A controlled evaluation of how a hidden objective, seeded in one compromised agent, propagates through multi-agent LLM organizations under varying delegation rules and information-sharing regimes.</p>
+          <p class="paper-desc"><strong>Implementation.</strong> Built centralized and decentralized organizational scaffolds in Inspect AI, with structured transcript logging and custom safety metrics measuring blast radius, task-goal degradation, and hidden-goal completion.</p>
+          <p class="paper-desc"><strong>Findings.</strong> Decentralization substantially reduces effective blast radius, while broad information-sharing amplifies hidden-objective spread and emergent coordination even when only one agent is compromised.</p>
+          <p class="paper-desc"><strong>Contribution.</strong> Connects scalable-oversight and multi-agent safety research to a design-space perspective on how organizational structure and information flow shape cascading risk in agentic systems.</p>
         </li>
+        <li>
+          <span class="paper-title">Interaction-Level Governance for Healthcare LLMs</span>
+          <span class="venue">Interaction-level alignment &middot; Lead author &middot; Under review at <em>npj Digital Medicine</em> (Nature)</span>
+          <p class="paper-desc"><strong>Framework.</strong> A three-layer governance framework that stratifies each interaction by clinical risk, user state, and decision proximity rather than treating all queries symmetrically. Risk tiers map to response strategies (clarification, escalation, bounded non-directive guidance), addressing the &ldquo;gray-area&rdquo; failure mode where models oscillate between sycophancy and blanket refusal.</p>
+          <p class="paper-desc"><strong>Uncertainty mechanism.</strong> Proposed inter-model agreement on clinical risk assessment across multiple LLMs as an uncertainty signal for conservative arbitration.</p>
+          <p class="paper-desc"><strong>Ongoing.</strong> Investigating RLHF and preference-optimization approaches to operationalize interaction-level safety policies as post-training targets.</p>
+        </li>
+        <li>
+          <span class="paper-title">Constitutional Training for Role-Based Alignment</span>
+          <span class="venue">Interaction-level alignment &middot; Ongoing research</span>
+          <p class="paper-desc"><strong>Question.</strong> Can constitutional training mitigate harmful behavior arising from strong persona identification and persistent role context&mdash;role-play jailbreaks, sycophancy under persona pressure, goal drift within long conversations?</p>
+          <p class="paper-desc"><strong>Approach.</strong> Designing an experimental framework based on the attached-vs-detached role-identification distinction, evaluating whether separating role-playing from goal pursuit improves alignment while preserving task performance. Comparing constitutional and preference-based training regimes across diverse personas.</p>
+        </li>
+        <li>
+          <span class="paper-title">Honesty&ndash;Sycophancy Tradeoff in LLMs with Evolving User Preferences</span>
+          <span class="venue">Incentives and trust in agentic systems &middot; Working paper</span>
+          <p class="paper-desc">A formal model of the strategic tension providers face between honesty (long-run trust) and sycophancy (short-run engagement) when users have limited ability to detect sycophancy and preferences drift with model output. Proposes <em>trust</em> as a benchmark metric for alignment and governance evaluation, and identifies conditions under which honesty is the equilibrium strategy.</p>
+        </li>
+      </ol>
+
+      <h3>Working Papers Relevant to AI Safety</h3>
+      <ol class="papers">
         <li>
           <span class="paper-title">Organization of Platform Markets: Coordination, Decision Rights and Information</span>
           <span class="coauthors">with Krishnan Anand</span>
           <span class="venue">Revising for resubmission to <em>Management Science</em></span>
+          <p class="paper-desc">Formal analysis of centralized vs.&nbsp;decentralized coordination under agent competition and information asymmetry &mdash; directly extended in &ldquo;Secret Loyalties.&rdquo;</p>
         </li>
         <li>
           <span class="paper-title">The Ethical Flywheel: Responsible Platforms and Thriving Markets</span>
           <span class="coauthors">with Krishnan S. Anand, Manu Goyal</span>
           <span class="venue">Targeting for submission to <em>Management Science</em></span>
+          <p class="paper-desc">Dynamic model of ethical vs.&nbsp;profit-maximizing platforms under bounded rationality; relevant to reputation systems, incentive design, and alignment of platform-mediated agents.</p>
         </li>
         <li>
           <span class="paper-title">Effect of a Wholesale Price Contract on the Risk of Delivery Failure in a Crowdfunding Campaign</span>
           <span class="coauthors">with Joyaditya Laik</span>
           <span class="venue">Targeting for submission to <em>POM Journal</em></span>
         </li>
-        <li>
-          <span class="paper-title">The Honesty–Sycophancy Tradeoff in Large Language Models with Evolving User Preferences</span>
-          <span class="venue">Working Paper</span>
-        </li>
       </ol>
     </section>
 
     <section id="publications">
-      <h2>Publications</h2>
+      <h2>Publications (Economics of Digital Platforms)</h2>
       <ol class="papers">
         <li>
           Gal-Or, E., Gal-Or, R., &amp; Penmetsa, N. (2018).
@@ -105,6 +121,24 @@
           <em>Production and Operations Management.</em>
         </li>
       </ol>
+    </section>
+
+    <section id="training">
+      <h2>Training &amp; Skills</h2>
+
+      <h3>AI Safety Training</h3>
+      <ul class="plain">
+        <li><strong>BlueDot Impact &mdash; Technical AI Safety Course</strong> (2026). RLHF, interpretability, evaluations, governance, frontier safety.</li>
+        <li><strong>BlueDot Impact &mdash; AGI Strategy Course</strong> (2026).</li>
+        <li><strong>MLCommons</strong> &mdash; Member, AI Risk and AI Safety &amp; Science Working Groups (2023&ndash;present).</li>
+      </ul>
+
+      <h3>Technical Skills</h3>
+      <ul class="plain">
+        <li><strong>ML &amp; Alignment:</strong> Inspect AI, multi-agent agentic evaluations, RLHF and RLAIF, DPO, constitutional AI, prompt engineering, evaluation pipeline design.</li>
+        <li><strong>Programming:</strong> Python (primary), scientific Python stack (NumPy, pandas), API integration with frontier LLMs.</li>
+        <li><strong>Modeling:</strong> Game theory, mechanism design, incentive analysis, formal modeling of multi-agent systems.</li>
+      </ul>
     </section>
 
     <section id="teaching">
